@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standort</title>
+    <link rel="icon" type="image/x-icon" href="Joel (2).png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #2c54b4;
+            color: #d0caca;
+            padding: 10px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header-content img {
+            margin-right: 10px; 
+            max-width: 100%;
+            height: auto;
+            width: 120px; 
+        }
+
+        .header-links {
+            display: block;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .header-links.show {
+            max-height: 500px; 
+            transition: max-height 0.5s ease-in; 
+        }
+
+        .header-links h2 {
+            margin: 0 10px; 
+            font-size: 16px; 
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .header-links h2:hover {
+            color: #2b64d4;
+        }
+
+        .content {
+            padding: 10px; 
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .toggle-button {
+            background-color: #2c54b4;
+            color: white;
+            padding: 8px 16px; 
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .toggle-button:hover {
+            background-color: #2b64d4;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-content img {
+                margin: 0 auto 5px; 
+            }
+
+            .header-links {
+                flex-direction: column;
+            }
+
+            .header-links h2 {
+                margin: 5px 0;
+                font-size: 16px; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 18px; 
+            }
+
+            .header-links h2 {
+                font-size: 14px; 
+            }
+
+            .header-content img {
+                width: 100px; 
+            }
+        }
+
+        @media (min-width: 769px) {
+            .header-links {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .header-links h2 {
+                margin: 10px;
+            }
+        }
+
+        h2 {
+            font-size: 20px; 
+        }
+    </style>
+</head>
+<body>
+<a href></a>
+    <header>
+        <div class="header-content">
+            <a href="index.html"> <img src="download (1).gif" alt="Profilbild"> </a>
+            <button class="toggle-button" onclick="toggleLinks()">Menü anzeigen/verstecken</button>
+            <div class="header-links" id="headerLinks">
+                <h2><a href="3Bewerbungsprofil.html">Bewerbungsprofil</a></h2>
+                <h2><a href="4Bewerbungsunterlagen.html">Bewerbungsunterlagen</a></h2>
+                <h2><a href="5Standort.html">Standort</a></h2>
+                <h2><a href="6Hobbys.html">Hobbys</a></h2>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <center>
+            <h2>Standort</h2>
+            <p>An diesem Ort arbeite ich gerade</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2701.1928361328933!2d8.512386977607957!3d47.3886702711706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900a4760c28b8b%3A0x67bde41dd3ae306!2sPfingstweidstrasse%2051%2C%208005%20Z%C3%BCrich!5e0!3m2!1sen!2sch!4v1729770157582!5m2!1sen!2sch" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </center>
+        </div>
+    </div>
+
+    <script>
+        function toggleLinks() {
+            var links = document.getElementById("headerLinks");
+            if (links.classList.contains("show")) {
+                links.classList.remove("show");
+            } else {
+                links.classList.add("show");
+            }
+        }
+    </script>
+
+</body>
+</html>
