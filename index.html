@@ -168,6 +168,12 @@
             <h3>CSS</h3>
             <p>CSS ist hauptsächlich für das Aussehen und die Anordung der Website verantwortlich. Also für Farben, Schriftarten, Abstände und Layouts. Diese Programmiersprache wird bei jeder Website verwendet, bei welcher das Design der Website verbessert werden soll.  </p>
         </div>
+
+         <div class="easter-egg" id="easterEgg">
+            <h2>Überraschung!</h2>
+            <img src="https://example.com/secret-image.jpg" alt="Geheimes Bild">
+            <p>Du hast das geheime Easter Egg entdeckt! 🎉</p>
+        </div>
     </div>
 
     <script>
@@ -179,6 +185,37 @@
                 links.classList.add("show");
             }
         }
+
+        <div class="easter-egg" id="easterEgg">
+            <h2>Überraschung!</h2>
+            <img src="https://example.com/secret-image.jpg" alt="Geheimes Bild">
+            <p>Du hast das geheime Easter Egg entdeckt! 🎉</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleLinks() {
+            var links = document.getElementById("headerLinks");
+            if (links.classList.contains("show")) {
+                links.classList.remove("show");
+            } else {
+                links.classList.add("show");
+            }
+        }
+
+        let easterEggCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "KeyB", "KeyA"];
+        let userInput = [];
+
+        window.addEventListener("keydown", function(e) {
+            userInput.push(e.code);
+            if (userInput.length > easterEggCode.length) {
+                userInput.shift(); // Entfernt den ersten Wert, wenn der Benutzer weiter tippt
+            }
+
+            if (JSON.stringify(userInput) === JSON.stringify(easterEggCode)) {
+                document.getElementById("easterEgg").style.display = "block"; // Zeige das Easter Egg
+            }
+        });
     </script>
 
 </body>
